@@ -41,6 +41,7 @@
 <script src="js/vendor/what-input.js"></script>
 <script src="js/vendor/foundation.js"></script>
 <script src="js/app.js"></script>
+<script src="js/relax/rellax.min.js"></script>
 <script type="text/javascript" src="js/jquery.easeScroll.js"></script>
 <script src="js/script.js"></script>
 
