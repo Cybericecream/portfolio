@@ -1,0 +1,241 @@
+
+.outer {
+  @include pageWidth;
+}
+
+.spacer {
+  height: 10vh;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.loginButton {
+  display: block;
+  @include mobile{
+    display: none;
+  }
+  position:fixed;
+  width: 3rem;
+  height: 3rem;
+  bottom: 3rem;
+  right: 3rem;
+  border-radius: 1.75rem;
+  text-align: center;
+  p {
+    font-size: 2rem;
+    position: relative;
+    top: -.25rem;
+    color: #7bbeea;
+  }
+  &:hover {
+    background-color: $white;
+    box-shadow: 2px 2px 3px #999;
+    p {
+      color: $bodyColour;
+    }
+  }
+}
+
+//Navigation
+header {
+  background-color: $navColour;
+  position: sticky;
+  top: 0;
+  .top-bar {
+    background: none;
+    .menu {
+      background: none;
+    }
+  }
+
+  h1 {
+    color: $navItems;
+    font-size: calc(.7vw + 1rem);
+    font-weight: 200;
+  }
+
+  .menu-hover {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: $menu-hover-transition;
+
+    li a {
+      padding: 0.75rem 0;
+      color: rgba($navItems, 1);
+      position: relative;
+      font-size: 1rem;
+      margin-left: 1.5rem;
+      &:hover {
+        color: $navItemsHighlight;
+      }
+    }
+
+
+    li.active > a {
+      background-color: transparent;
+    }
+
+    a:before,
+    a::after {
+      height: $menu-hover-lines-width;
+      position: absolute;
+      content: '';
+      transition: $menu-hover-transition;
+      background-color: $navItems;
+      width: 0;
+    }
+
+    a::before {
+      top: 0;
+      left: 0;
+    }
+
+    a::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    a:hover::before,
+    .active a::before,
+    a:hover::after,
+    .active a::after {
+      width: 100%;
+    }
+  }
+
+  .desktopNav {
+    display: none;
+    ul {
+      float: right;
+    }
+    @media screen and (min-width: 40em) {
+      display: block;
+    }
+  }
+
+  .mobileNav {
+    display: block;
+    button {
+      float: right;
+    }
+    @media screen and (min-width: 40em) {
+      display: none;
+    }
+  }
+}
+
+
+.mobileNavMenu {
+  @include off-canvas-base($background: $navColour, $transition: 0.3s ease-in-out);
+  @include off-canvas-position($position: $mobileNavMenuSide);
+
+  .mobileNavMenu-inner {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  span {
+    color: $navItems;
+  }
+
+  .mobileNavMenu-menu {
+    @include menu-base;
+    @include menu-direction(vertical);
+
+    a {
+      color: $navItems;
+
+      &:hover {
+        color: $navItems;
+      }
+    }
+  }
+
+  .mobileNavMenu-close {
+    color: $white;
+    font-size: $mobileNavMenuClosebuttonSize;
+
+    &:hover {
+      color: $navItems;
+    }
+  }
+}
+
+footer {
+  background-color: $white;
+  padding: 1.5em 0;
+
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0 calc(-50vw + 50%);
+  max-height: 40vh;
+  object-fit: cover;
+
+.socialList {
+  list-style: none;
+  display: inline-block;
+  li {
+    float: left;
+    a {
+      font-size: 2rem;
+      margin: 0 .5rem;
+    }
+  }
+}
+
+.info {
+  h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    @include mobile {
+      font-size: 1em;
+    }
+  }
+  .leftText {
+    padding: 0 5vw;
+    @include mobile {
+      display: none;
+    }
+    h2 {
+    text-transform: none;
+    letter-spacing: normal;
+    position: relative;
+    top: 20%;
+    @include mobile {
+      top: 0;
+      font-size: 1em;
+    }
+  }
+  }
+  .pages {
+    li {
+      list-style: none;
+      padding-right: 1.5vw;
+      @include mobile {
+        padding-right: 6vw;
+      }
+    }
+  }
+  span {
+    i {
+      position: relative;
+      top: .1vh;
+      margin: 0 .3vw;
+    }
+  }
+}
+
+  div{
+    @include pageWidth;
+  }
+}
+//Navigation

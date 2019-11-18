@@ -1,0 +1,33 @@
+$white: #ffffff;
+$black: #000000;
+
+$bodyColour: #48A6E3;
+
+$navColour: $bodyColour;
+$navItems: white;
+$navItemsHighlight: grey;
+
+$mobileNavMenuSide: right;
+$mobileNavMenuClosebuttonSize: 5rem;
+
+$menu-hover-transition: all 0.35s ease;
+$menu-hover-lines-width: 3px;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+@mixin pageWidth {
+  max-width: 1500px;
+  width: calc(100vw - 5em);
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 40em) {
+    @content;
+  }
+}
